@@ -1,0 +1,591 @@
+html {
+  scroll-behavior: smooth;
+}
+body {
+  /* height: 100svh; */
+  font-family: "Inter", sans-serif;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.info {
+  width: 100%;
+  height: 1.3em;
+  background-color: #f4bc49;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0;
+}
+/*Header*/
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.headerContainer {
+  width: 100%;
+  height: 7em;
+  background: linear-gradient(
+    90deg,
+    rgba(43, 32, 77, 100),
+    rgba(51, 78, 155, 100)
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navContainer {
+  width: 51em;
+  min-width: 1em;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: animationOp 1s;
+}
+
+.options:not(.option5) {
+  text-decoration: none;
+  color: black;
+  padding: 1em 2em;
+  color: white;
+  position: relative;
+  transition: all 0.3s;
+}
+
+.options:hover:not(.option5) {
+  color: #f4bc49;
+}
+
+.options:not(.option5)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #f4bc49;
+  height: 2px;
+  width: 0;
+  transition: all 0.3s;
+}
+
+.options:not(.option5)::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #f4bc49;
+  height: 2px;
+  width: 0;
+  transition: all 0.3s;
+}
+
+.options:not(.option5):hover::before,
+.options:not(.option5):hover::after {
+  width: 100%;
+}
+
+.option5 {
+  margin-left: 1em;
+  padding: 1em 3.5em;
+  background-color: #f4bc49;
+  border-radius: 0.5em;
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  transition: scale 0.1s;
+}
+
+.option5:hover {
+  scale: 1.1;
+}
+
+@media (width < 48em) {
+  .headerContainer {
+    height: 17em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .navContainer {
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .option5 {
+    margin-left: unset;
+  }
+}
+@keyframes animationOp {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 100;
+    transform: translate(0);
+  }
+}
+.brandName {
+  display: inline-block;
+  letter-spacing: 0px;
+  color: white;
+  border-radius: 0.5em;
+  padding: 0 0.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4em;
+  position: relative;
+  transition: all 0.3s;
+  animation: animationBr 1s;
+}
+
+.brandName::after {
+  content: "";
+  position: absolute;
+  background-color: #f4bc49;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  transition: width 0.3s;
+}
+
+.brandName:hover::after {
+  width: 0%;
+}
+
+.eM {
+  font-size: 0.3em;
+}
+
+.Co {
+  color: #f4bc49;
+}
+
+sup {
+  color: #f4bc49;
+}
+
+@keyframes animationBr {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 100;
+    transform: translate(0);
+  }
+}
+
+/*Body*/
+
+.section1 {
+  width: 100%;
+  height: 25em;
+  background: linear-gradient(
+    90deg,
+    rgba(43, 32, 77, 100),
+    rgba(51, 78, 155, 100)
+  );
+  position: relative;
+}
+
+.SUBsection1 {
+  position: absolute;
+  height: 25em;
+  width: 60%;
+  min-width: max-content;
+  background: linear-gradient(
+    90deg,
+    rgba(138, 43, 225, 100%) 50%,
+    rgba(51, 78, 155, 100) 150%
+  );
+  top: 50%;
+  right: 20%;
+  border-radius: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.SUBsection1 h1 {
+  font-size: 8em;
+}
+
+.whitearea {
+  width: 100%;
+  height: 12.6em;
+}
+
+.section2 {
+  width: 100%;
+  height: 100svh;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5em;
+  padding: 1em;
+  place-items: center;
+}
+
+.cardshape {
+  width: 100%;
+  height: 70%;
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardshape a {
+  display: inline-block;
+  text-decoration: none;
+  width: 40%;
+  text-align: center;
+  color: white;
+  background-color: #f4bc49;
+  padding: 1em;
+  margin-top: 2em;
+  border-radius: 1.3em;
+  position: relative;
+  animation: cardsAN 1s;
+}
+
+.cardshape a::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 1.3em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #f4bc49;
+  z-index: -1;
+  opacity: 1;
+  transition: all 0.3s;
+}
+
+.cardshape a:hover::before {
+  scale: 1.4;
+  opacity: 0;
+}
+
+.cardshape a:hover {
+  box-shadow: 0px 0px 10px 0px #1c027d;
+  background-color: #1c027d;
+  scale: 1.1;
+}
+
+.cardshape a:active {
+  scale: 1;
+}
+
+.cards {
+  width: 100%;
+  height: 85%;
+  background-image: url(/images/laptop2.jpg);
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 1em;
+  box-shadow: 0 0 15px 1px black;
+  transition: all 0.3s;
+  animation: cardsAN 1s;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cards::after {
+  content: "Additional Information⬆";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 0;
+  background-color: #f4bc49;
+  border-radius: 1em;
+  transition: all 0.5s;
+  text-align: center;
+}
+
+.cards:active::after {
+  height: 100%;
+  content: "Additional Information⬇";
+}
+
+.cards:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 5px 5px black;
+}
+
+@keyframes cardsAN {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+.line {
+  width: 100%;
+  height: 3rem;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+.lineIn {
+  width: 100%;
+  height: 3rem;
+  background-color: #f4bc49;
+  /* clip-path: polygon(-100% 50%, 50% -10%, 100% 50%, 50% 10%, -100%, 50%); */
+  width: 75%;
+  border-radius: 2em;
+  box-shadow: 0 0 20px 0 #8a2be1;
+  clip-path: circle(5% at 50% 50%);
+  transition: clip-path 1s, color 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* color: #f4bc49; */
+}
+.lineIn:hover {
+  clip-path: circle(100%);
+}
+
+.section3 {
+  width: 100%;
+  height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.section31 {
+  width: 100%;
+  height: max-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.subsection31 {
+  width: 300px;
+  height: 300px;
+  margin: 2em auto;
+  background-color: #1c027d;
+  border-radius: 2em;
+  box-shadow: 0 0 20px 0 #8a2be1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: scale 0.3s, box-shadow 0.2s;
+  position: relative;
+}
+.subsection31:hover {
+  scale: 1.1;
+  box-shadow: 0 0 10px 5px black;
+  clip-path: circle(100%);
+}
+/* .subsection31::before {
+  content: "";
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  border-radius: 2em;
+  background-color: aquamarine;
+  width: 100%;
+  height: 100%;
+  clip-path: circle(10% at 0 0);
+  transition: all 0.5s;
+} */
+.polygon {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  border-radius: 2em;
+  background-color: green;
+  width: 100%;
+  height: 100%;
+  clip-path: circle(10% at 0 0);
+  transition: all 0.5s;
+  z-index: 0;
+}
+.subsection31:hover .polygon {
+  clip-path: circle(100%);
+}
+
+.imgrm {
+  transition: all 0.5s;
+  z-index: 1;
+}
+
+.imgrm:hover {
+  scale: 1.1;
+}
+
+.prm {
+  font-weight: bold;
+  letter-spacing: 5px;
+  z-index: 1;
+}
+
+.arrow2down {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+}
+
+.imgarrd {
+  position: absolute;
+  right: 14.2em;
+}
+
+.section32 {
+  width: 100%;
+  height: max-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.subsection32 {
+  width: 300px;
+  height: 300px;
+  margin: 2em auto;
+  background-color: #1c027d;
+  border-radius: 2em;
+  box-shadow: 0 0 20px 0 #8a2be1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: scale 0.3s, box-shadow 0.2s;
+  position: relative;
+}
+.subsection32:hover .polygon {
+  clip-path: circle(100%);
+}
+
+.brf {
+  background-color: green;
+}
+
+.subsection32:hover {
+  scale: 1.1;
+  box-shadow: 0 0 10px 5px black;
+}
+
+.close-modal {
+  position: absolute;
+  top: 1.2rem;
+  right: 2rem;
+  font-size: 5rem;
+  color: #333;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  background-color: white;
+  padding: 6rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 5;
+}
+
+/*section4-Modul*/
+
+.section4 {
+  width: 100%;
+  height: 50svh;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-rows: repeat(auto-fill, minmax(1fr, 1fr));
+}
+
+.section4 .ModulOptions {
+  width: 90%;
+  height: 5em;
+  background-color: #1c027d;
+  border-radius: 2em;
+  position: relative;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.ModulOptions::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: #f4bc49;
+  clip-path: polygon(0 0, 90% 0, 85% 100%, 0 100%);
+  border-radius: 2em;
+  transition: all 1s;
+}
+
+.ModulOptions:hover::after {
+  content: "yo";
+  width: 50%;
+  border-top-right-radius: unset;
+  scale: 1.1;
+}
+
+.section4 a {
+  text-decoration: none;
+  padding: 0.1em 1.5em;
+  border: 2px solid black;
+  background-color: #f4bc49;
+}
